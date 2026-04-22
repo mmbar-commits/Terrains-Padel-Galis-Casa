@@ -31,24 +31,27 @@
             scroll-behavior: smooth;
         }
 
-        /* Header fixe avec flexbox pour le logo et le texte */
+        /* Header fixe avec fond opaque */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 30px 40px;
+            padding: 20px 40px;
             box-sizing: border-box;
             z-index: 100;
-            pointer-events: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .logo-small {
             width: 140px;
             height: auto;
+            display: flex;
+            align-items: center;
         }
         
         .logo-small svg {
@@ -57,21 +60,18 @@
         }
 
         .header-tagline {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--accent-color);
             text-transform: uppercase;
             letter-spacing: 2px;
-            background: rgba(49, 65, 82, 0.8);
-            padding: 8px 15px;
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
+            white-space: nowrap; /* Empêche le texte de passer à la ligne */
         }
 
-        /* Sections modifiées pour éviter la superposition */
+        /* Sections adaptées pour ne pas chevaucher l'en-tête */
         section {
             position: relative;
-            min-height: 100vh; /* Permet au contenu de s'étendre si nécessaire */
+            min-height: 100vh;
             height: auto;
             width: 100%;
             scroll-snap-align: start;
@@ -79,9 +79,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 120px 20px 60px; /* Padding top plus grand pour éviter l'en-tête */
+            padding: 120px 20px 60px;
             box-sizing: border-box;
-            background-color: var(--bg-color); /* Empêche la transparence de montrer la section précédente */
+            background-color: var(--bg-color);
         }
 
         .container {
@@ -137,7 +137,7 @@
             width: 100%;
         }
 
-        /* GRILLES DE CARTES (Sections 2 et 3) */
+        /* GRILLES DE CARTES */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -210,7 +210,6 @@
             display: inline-block;
             margin: 30px 0;
             transition: color 0.3s ease;
-            pointer-events: auto; /* Rend le lien cliquable */
         }
 
         .phone-display:hover { color: var(--accent-color); }
@@ -246,15 +245,22 @@
             60% { transform: translateY(-5px) translateX(-50%); }
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             header { 
-                padding: 15px 20px; 
-                flex-direction: column; 
-                align-items: flex-start;
-                gap: 15px;
+                padding: 15px 20px;
+                /* On garde la ligne horizontale */
+                flex-direction: row; 
+                justify-content: space-between;
+                align-items: center;
             }
-            .logo-small { width: 100px; }
-            .header-tagline { font-size: 0.8rem; padding: 5px 10px; }
+            /* Réduction drastique pour forcer l'affichage sur une ligne */
+            .logo-small { width: 75px; }
+            .header-tagline { 
+                font-size: 0.55rem; 
+                letter-spacing: 1px;
+            }
+            
             h1 { font-size: 2.5rem; }
             .phone-display { font-size: 3rem; }
             .section-title { font-size: 2rem; margin-bottom: 40px; }
