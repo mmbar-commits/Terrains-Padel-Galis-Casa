@@ -65,10 +65,10 @@
             color: var(--accent-color);
             text-transform: uppercase;
             letter-spacing: 2px;
-            white-space: nowrap; /* Empêche le texte de passer à la ligne */
+            white-space: nowrap;
         }
 
-        /* Sections adaptées pour ne pas chevaucher l'en-tête */
+        /* Sections adaptées pour aligner le titre sous l'en-tête */
         section {
             position: relative;
             min-height: 100vh;
@@ -77,9 +77,9 @@
             scroll-snap-align: start;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Aligne le contenu vers le haut au lieu de centrer */
             align-items: center;
-            padding: 120px 20px 60px;
+            padding: 130px 20px 60px; /* 130px dégage l'en-tête (env. 85px) + marge pour le titre */
             box-sizing: border-box;
             background-color: var(--bg-color);
         }
@@ -249,12 +249,10 @@
         @media (max-width: 768px) {
             header { 
                 padding: 15px 20px;
-                /* On garde la ligne horizontale */
                 flex-direction: row; 
                 justify-content: space-between;
                 align-items: center;
             }
-            /* Réduction drastique pour forcer l'affichage sur une ligne */
             .logo-small { width: 75px; }
             .header-tagline { 
                 font-size: 0.55rem; 
@@ -280,9 +278,9 @@
 
     <section>
         <div class="container hero-layout">
-            <div class="badge-premium">Stock Immédiat - Casablanca</div>
+            <div class="badge-premium">Lot disponible immédiatement - Casablanca</div>
             <h1><strong>7 Terrains</strong> de<br>Padel Premium</h1>
-            <p class="hero-desc">Bénéficiez de l'excellence de l'équipementier officiel du World Padel Tour. Notre sélection de courts est disponible immédiatement, sans délai de fabrication, pour propulser votre infrastructure sportive dès aujourd'hui.</p>
+            <p class="hero-desc">Bénéficiez de l'excellence de l'équipementier officiel du PadelGalis. Notre sélection de courts est disponible immédiatement, sans délai de fabrication, sans délai de livraison, sans délai d'importation, pour propulser votre infrastructure sportive dès aujourd'hui.</p>
         </div>
         
         <div class="scroll-indicator">
@@ -305,7 +303,7 @@
                 <div class="pro-card">
                     <div class="qty">6x</div>
                     <h3>Mundial</h3>
-                    <p>Le standard international par excellence. Une structure renforcée, robuste et durable, idéale pour garantir des performances optimales face à une exploitation intensive de votre club.</p>
+                    <p>Une référence internationale qui a fait ses preuves. Une structure renforcée, robuste et durable, idéale pour garantir des performances optimales face à une exploitation intensive de votre club.</p>
                 </div>
             </div>
         </div>
@@ -324,7 +322,7 @@
                 <div class="pro-card">
                     <div class="accent-title">Nouveaux Clubs</div>
                     <h3>Lancement express</h3>
-                    <p>Contournez les mois d'attente habituels liés à la fabrication et à l'importation. Lancez ou agrandissez votre club de padel dès aujourd'hui avec du matériel World Padel Tour.</p>
+                    <p>Contournez les mois d'attente habituels liés à la fabrication et à l'importation. Lancez ou agrandissez votre club de padel dès aujourd'hui avec du matériel de référence.</p>
                 </div>
                 
                 <div class="pro-card">
