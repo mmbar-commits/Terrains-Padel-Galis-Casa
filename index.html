@@ -6,8 +6,9 @@
     <title>Vente Padel Galis - Casablanca</title>
     <style>
         :root {
-            --primary-blue: #0056b3;
-            --overlay: rgba(0, 0, 0, 0.6);
+            --brand-color: rgb(49, 65, 82);
+            --accent-blue: #00a8ff;
+            --overlay: rgba(49, 65, 82, 0.85); /* Utilisation de votre couleur pour les superpositions */
         }
 
         body, html {
@@ -16,10 +17,11 @@
             height: 100%;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: white;
+            background-color: var(--brand-color);
             scroll-behavior: smooth;
         }
 
-        /* Style pour l'effet Parallax */
+        /* Effet Parallax */
         .parallax {
             background-attachment: fixed;
             background-position: center;
@@ -33,115 +35,129 @@
             position: relative;
         }
 
-        .content {
+        .content-section {
             background-color: var(--overlay);
-            padding: 50px;
+            padding: 60px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        /* Sections spécifiques */
-        .bg-1 { background-image: url('https://images.unsplash.com/photo-1626224484214-4051d08214f5?q=80&w=2070'); } /* Court général */
-        .bg-2 { background-image: url('https://images.unsplash.com/photo-1592709823125-a191f07a2a5e?q=80&w=2013'); } /* Détail structure */
-        .bg-3 { background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070'); } /* Gros plan balle/filet */
-
-        h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; letter-spacing: 3px; }
-        h2 { font-size: 2.5rem; text-transform: uppercase; color: #00a8ff; }
-        p { font-size: 1.2rem; max-width: 800px; margin: 20px auto; }
+        /* Images de fond */
+        .bg-1 { background-image: url('https://images.unsplash.com/photo-1626224484214-4051d08214f5?q=80&w=2070'); }
+        .bg-2 { background-image: url('https://images.unsplash.com/photo-1592709823125-a191f07a2a5e?q=80&w=2013'); }
+        .bg-3 { background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070'); }
 
         .logo {
-            width: 200px;
-            margin-bottom: 20px;
+            width: 250px;
+            max-width: 80%;
+            margin-bottom: 30px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
         }
+
+        h1 { font-size: 3rem; text-transform: uppercase; margin: 0; letter-spacing: 2px; }
+        h2 { font-size: 2.2rem; text-transform: uppercase; margin-bottom: 30px; border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 10px; }
+        
+        p { font-size: 1.15rem; max-width: 850px; margin: 20px auto; line-height: 1.8; }
 
         .badge {
             background: #e63946;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 8px 18px;
+            border-radius: 4px;
             font-weight: bold;
             display: inline-block;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 30px auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-top: 0; color: var(--accent-blue); font-size: 1.5rem; }
+
+        .phone-container {
+            margin-top: 40px;
+            padding: 40px;
+            background-color: var(--brand-color);
         }
 
         .phone-link {
-            font-size: 3rem;
-            color: #00a8ff;
+            font-size: 3.5rem;
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: bold;
             display: block;
-            margin-top: 20px;
+            transition: color 0.3s;
         }
 
-        /* Media Queries */
+        .phone-link:hover { color: white; }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            .content { padding: 30px 15px; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .phone-link { font-size: 2rem; }
+            .content-section { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
     <div class="parallax bg-1">
-        <div class="content">
-            <img src="https://padelgalis.com/wp-content/uploads/2021/01/logo-padel-galis.png" alt="Padel Galis Logo" class="logo">
-            <div class="badge">DISPONIBILITÉ IMMÉDIATE - CASABLANCA</div>
+        <div class="content-section">
+            <img src="https://padelgalis.com/wp-content/uploads/2024/05/logo.webp" alt="Padel Galis Logo" class="logo">
+            <div class="badge">Stock Local - Casablanca</div>
             <h1>Lot de 7 Terrains Premium</h1>
-            <p>L'excellence du World Padel Tour sans délai de fabrication ni d'importation.</p>
+            <p>Profitez de la qualité du fournisseur officiel du World Padel Tour, disponible immédiatement et sans délai d'importation.</p>
         </div>
     </div>
 
     <div class="parallax bg-2">
-        <div class="content">
+        <div class="content-section">
             <h2>Composition du Lot</h2>
             <div class="grid">
                 <div class="card">
                     <h3>1x ULTRAPANORAMICA</h3>
-                    <p>Le court central par excellence. Visibilité totale sans montants verticaux pour une expérience de jeu et de visionnage unique.</p>
+                    <p>Le sommet de la gamme Padel Galis. Une structure sans obstacles visuels, conçue pour les terrains centraux et une expérience spectateur maximale.</p>
                 </div>
                 <div class="card">
                     <h3>6x MUNDIAL</h3>
-                    <p>Robustesse et design. La référence mondiale pour les clubs à forte affluence, conçue pour durer.</p>
+                    <p>L'alliance parfaite entre robustesse et esthétique. Le modèle plébiscité par les clubs professionnels pour sa durabilité exceptionnelle.</p>
                 </div>
             </div>
-            <p><i>Matériel neuf (jamais monté). Verre trempé 12mm. Acier galvanisé. Éclairage LED inclus.</i></p>
+            <p><strong>Spécifications :</strong> Verre trempé 12mm, Acier galvanisé, Gazon monofilament, Éclairage LED haute performance.</p>
         </div>
     </div>
 
     <div class="parallax bg-3">
-        <div class="content">
+        <div class="content-section">
             <h2>Transparence & Logistique</h2>
-            <p>Vendu en l'état : Quelques défauts cosmétiques (peinture, grillage) dus au stockage nécessitant des retouches simples.</p>
-            <p>Enlèvement en périphérie de Casablanca à la charge de l'acquéreur (prévoir matériel de manutention).</p>
-            <p style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px;">
-                <strong>Prix fortement remisé pour le lot complet.</strong>
-            </p>
+            <p>Matériel neuf (jamais monté). En raison du stockage, quelques retouches esthétiques mineures (peinture, grillage) sont à prévoir.</p>
+            <p>Vendus en l'état avec une remise exceptionnelle sur le lot complet.</p>
+            <p><strong>Enlèvement :</strong> Périphérie de Casablanca. Manutention et transport à la charge de l'acquéreur.</p>
         </div>
     </div>
 
-    <div class="parallax" style="background-color: #1a1a1a;">
-        <div class="content">
-            <h2>Intéressé ?</h2>
-            <p>Contactez-nous directement pour les détails techniques et le tarif du lot.</p>
-            <a href="tel:0668556156" class="phone-link">06 68 55 61 56</a>
-            <p style="margin-top: 40px; opacity: 0.6; font-size: 0.9rem;">Padel Galis Stock Local - Casablanca, Maroc</p>
-        </div>
+    <div class="phone-container" style="text-align: center;">
+        <h2>Contact Direct</h2>
+        <p>Appelez-nous pour obtenir le dossier complet et discuter du tarif.</p>
+        <a href="tel:0668556156" class="phone-link">06 68 55 61 56</a>
+        <p style="margin-top: 60px; opacity: 0.5; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
+            Padel Galis - Casablanca, Maroc
+        </p>
     </div>
 
 </body>
