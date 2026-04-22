@@ -18,7 +18,6 @@
             --card-border: rgba(255, 255, 255, 0.1);
         }
 
-        /* Scroll Snap appliqué rigoureusement sur html */
         html {
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
@@ -32,7 +31,6 @@
             color: var(--text-color);
         }
 
-        /* Header fixe avec fond opaque */
         header {
             position: fixed;
             top: 0;
@@ -69,23 +67,21 @@
             white-space: nowrap;
         }
 
-        /* Sections adaptées pour s'enclencher systématiquement sous le header */
         section {
             position: relative;
             min-height: 100vh;
             width: 100%;
             scroll-snap-align: start;
-            scroll-snap-stop: always; /* Force l'arrêt précis en haut de section */
+            scroll-snap-stop: always;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Aligne tout le contenu en haut */
+            justify-content: flex-start;
             align-items: center;
-            padding: 130px 20px 0; /* Espace prévu pour le header (130px) */
+            padding: 100px 20px 0; /* Réduit de 130px à 100px pour remonter les titres */
             box-sizing: border-box;
             background-color: var(--bg-color);
         }
 
-        /* Padding bottom spécifique pour la dernière section qui n'a pas d'indicateur */
         section:last-child {
             padding-bottom: 60px;
         }
@@ -96,7 +92,6 @@
             z-index: 2;
         }
 
-        /* TYPOGRAPHIE ET BADGE */
         .badge-premium {
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -139,11 +134,10 @@
             font-size: 2.5rem;
             font-weight: 300;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             width: 100%;
         }
 
-        /* GRILLES DE CARTES */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -206,7 +200,6 @@
             margin: 0;
         }
 
-        /* CONTACT */
         .phone-display {
             font-size: 4.5rem;
             font-weight: 700;
@@ -220,10 +213,9 @@
 
         .phone-display:hover { color: var(--accent-color); }
 
-        /* INDICATEUR DE DÉFILEMENT - Modifié pour ne plus être superposé */
         .scroll-indicator {
-            margin-top: auto; /* Pousse l'indicateur naturellement vers le bas */
-            padding-bottom: 20px;
+            margin-top: auto;
+            padding-bottom: 40px; /* Augmenté pour éviter que l'élément ne se cache sous le contenu */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -250,20 +242,16 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             header { 
                 padding: 15px 20px;
-                flex-direction: row; 
-                justify-content: space-between;
-                align-items: center;
             }
             .logo-small { width: 75px; }
             .header-tagline { 
                 font-size: 0.55rem; 
                 letter-spacing: 1px;
             }
-            
+            section { padding-top: 90px; }
             h1 { font-size: 2.5rem; }
             .phone-display { font-size: 3rem; }
             .section-title { font-size: 2rem; margin-bottom: 40px; }
@@ -284,10 +272,9 @@
     <section>
         <div class="container hero-layout">
             <div class="badge-premium">Lot disponible immédiatement - Casablanca</div>
-            <h1><strong>7 Terrains</strong> de<br>Padel de marque Premium</h1>
-            <p class="hero-desc">Bénéficiez de l'excellence de l'équipementier officiel du PadelGalis. Notre sélection de courts est disponible immédiatement, sans délai de fabrication, sans délai de livraison, sans délai d'importation, pour propulser votre infrastructure sportive dès aujourd'hui.</p>
+            <h1><strong>7 Terrains</strong> de<br>Padel de Marque Premium</h1>
+            <p class="hero-desc">Bénéficiez de l'excellence de l'équipementier officiel Padel Galis. Notre sélection de courts est disponible immédiatement, sans délai de fabrication, sans délai de livraison, sans délai d'importation, pour propulser votre infrastructure sportive dès aujourd'hui.</p>
         </div>
-        
         <div class="scroll-indicator">
             <span>Découvrir le lot</span>
             <div class="line"></div>
@@ -297,22 +284,19 @@
     <section>
         <div class="container">
             <h2 class="section-title">Composition du Lot</h2>
-            
             <div class="grid-2">
                 <div class="pro-card">
                     <div class="qty">1x</div>
                     <h3>Ultrapanoramica</h3>
                     <p>Le court central d'exception. Conception panoramique absolue sans montants d'angle, offrant une visibilité totale et un prestige incomparable pour vos événements et matchs phares.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="qty">6x</div>
                     <h3>Mundial</h3>
-                    <p>Une référence internationale qui a fait ses preuves. Une structure renforcée, robuste et durable, idéale pour garantir des performances optimales face à une exploitation intensive de votre club.</p>
+                    <p>Référence internationale qui a fait ses preuves. Une structure renforcée, robuste et durable, idéale pour garantir des performances optimales face à une exploitation intensive.</p>
                 </div>
             </div>
         </div>
-        
         <div class="scroll-indicator">
             <span>Opportunités</span>
             <div class="line"></div>
@@ -322,26 +306,22 @@
     <section>
         <div class="container">
             <h2 class="section-title">À qui s'adresse cette opportunité ?</h2>
-            
             <div class="grid-3">
                 <div class="pro-card">
                     <div class="accent-title">Nouveaux Clubs</div>
                     <h3>Lancement express</h3>
                     <p>Contournez les mois d'attente habituels liés à la fabrication et à l'importation. Lancez ou agrandissez votre club de padel dès aujourd'hui avec du matériel de référence.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Hôtellerie & Immobilier</div>
                     <h3>Valeur ajoutée</h3>
                     <p>Idéal pour les hôtels, resorts ou promoteurs immobiliers souhaitant équiper rapidement leurs complexes d'infrastructures sportives très demandées, de qualité mondiale.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Écoles & Campus</div>
                     <h3>Infrastructures sportives</h3>
                     <p>Parfait pour les établissements scolaires ou campus universitaires souhaitant intégrer le sport en vogue dans leurs programmes, avec une installation immédiate et sécurisée.</p>
                 </div>
-
                 <div class="pro-card">
                     <div class="accent-title">Pièces de Rechange</div>
                     <h3>Stock de sécurité</h3>
@@ -349,7 +329,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="scroll-indicator">
             <span>État du matériel</span>
             <div class="line"></div>
@@ -359,26 +338,22 @@
     <section>
         <div class="container">
             <h2 class="section-title">État des Équipements</h2>
-            
             <div class="grid-2">
                 <div class="pro-card">
                     <div class="accent-title">Transparence</div>
                     <h3>Matériel Neuf, Déballé</h3>
                     <p>Les terrains sont entièrement neufs et n'ont jamais été montés. Ils ont néanmoins été déballés et mal stockés, ce qui a occasionné quelques altérations de surface.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Esthétique</div>
                     <h3>Dommages Mineurs</h3>
                     <p>Quelques défauts sont visibles : zones de peinture écaillée, rayures superficielles, et certaines petites parties du grillage nécessiteront d'être redressées avant pose.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Personnalisation</div>
                     <h3>Filets Brandés</h3>
                     <p>Les bandeaux des filets portent actuellement des logos. Il faudra prévoir une personnalisation pour les rebrander aux couleurs de votre club ou masquer les logos présents.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Compensation</div>
                     <h3>Opportunité Tarifaire</h3>
@@ -386,7 +361,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="scroll-indicator">
             <span>Conditions de vente</span>
             <div class="line"></div>
@@ -396,26 +370,22 @@
     <section>
         <div class="container">
             <h2 class="section-title">Conditions de Vente</h2>
-            
             <div class="grid-2">
                 <div class="pro-card">
                     <div class="accent-title">Statut</div>
                     <h3>Vendu en l'état</h3>
                     <p>Le matériel est cédé dans son état actuel tel que décrit. Aucune réparation, remise en peinture ou intervention technique n'est prévue de la part du vendeur.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Volume</div>
                     <h3>Lot indivisible</h3>
                     <p>La vente porte exclusivement sur l'intégralité du lot (1 Ultrapanoramica et 6 Mundial). Il n'est pas possible de procéder à un achat partiel des terrains.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Logistique</div>
                     <h3>Récupération sur site</h3>
                     <p>L'enlèvement se fait directement sur le site de stockage situé en périphérie de Casablanca. L'acheteur devra mobiliser sa propre équipe et son matériel de manutention.</p>
                 </div>
-                
                 <div class="pro-card">
                     <div class="accent-title">Tarification</div>
                     <h3>Prix remisé & Discussion</h3>
@@ -423,7 +393,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="scroll-indicator">
             <span>Contact</span>
             <div class="line"></div>
@@ -434,9 +403,7 @@
         <div class="container" style="text-align: center;">
             <h2 class="section-title" style="margin-bottom: 20px;">Prêt à équiper votre infrastructure ?</h2>
             <p class="hero-desc" style="margin: 0 auto;">Prenez contact directement pour obtenir notre dossier complet, consulter les fiches techniques détaillées et étudier notre proposition tarifaire.</p>
-            
             <a href="tel:0668556156" class="phone-display">06 68 55 61 56</a>
-            
             <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; opacity: 0.4; margin-top: 80px;">
                 Padel Galis · Stock Local Maroc
             </div>
