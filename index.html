@@ -6,9 +6,10 @@
     <title>Vente Padel Galis - Casablanca</title>
     <style>
         :root {
+            /* Votre couleur spécifique RGB: 49, 65, 82 */
             --brand-color: rgb(49, 65, 82);
             --accent-blue: #00a8ff;
-            --overlay: rgba(49, 65, 82, 0.85); /* Utilisation de votre couleur pour les superpositions */
+            --overlay: rgba(49, 65, 82, 0.85);
         }
 
         body, html {
@@ -21,7 +22,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Effet Parallax */
+        /* Effet Parallax : Image fixe en fond lors du scroll */
         .parallax {
             background-attachment: fixed;
             background-position: center;
@@ -37,80 +38,80 @@
 
         .content-section {
             background-color: var(--overlay);
-            padding: 60px 20px;
+            padding: 80px 20px;
             width: 100%;
             box-sizing: border-box;
         }
 
-        /* Images de fond */
+        /* Images de fond représentatives */
         .bg-1 { background-image: url('https://images.unsplash.com/photo-1626224484214-4051d08214f5?q=80&w=2070'); }
         .bg-2 { background-image: url('https://images.unsplash.com/photo-1592709823125-a191f07a2a5e?q=80&w=2013'); }
         .bg-3 { background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070'); }
 
         .logo {
-            width: 250px;
-            max-width: 80%;
+            width: 280px;
+            max-width: 85%;
             margin-bottom: 30px;
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+            /* Filtre pour assurer la visibilité si le logo est sombre */
+            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2));
         }
 
         h1 { font-size: 3rem; text-transform: uppercase; margin: 0; letter-spacing: 2px; }
         h2 { font-size: 2.2rem; text-transform: uppercase; margin-bottom: 30px; border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 10px; }
         
-        p { font-size: 1.15rem; max-width: 850px; margin: 20px auto; line-height: 1.8; }
+        p { font-size: 1.2rem; max-width: 850px; margin: 20px auto; line-height: 1.8; }
 
         .badge {
             background: #e63946;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 4px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1100px;
             margin: 40px auto;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 35px;
             border-radius: 12px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.3s ease;
         }
 
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { margin-top: 0; color: var(--accent-blue); font-size: 1.5rem; }
+        .card h3 { margin-top: 0; color: var(--accent-blue); font-size: 1.6rem; }
 
-        .phone-container {
-            margin-top: 40px;
-            padding: 40px;
+        .contact-container {
+            padding: 100px 20px;
             background-color: var(--brand-color);
+            text-align: center;
         }
 
         .phone-link {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--accent-blue);
             text-decoration: none;
             font-weight: bold;
             display: block;
-            transition: color 0.3s;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
         }
 
-        .phone-link:hover { color: white; }
+        .phone-link:hover { transform: scale(1.05); color: white; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.5rem; }
-            .phone-link { font-size: 2rem; }
-            .content-section { padding: 40px 20px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .phone-link { font-size: 2.5rem; }
+            .content-section { padding: 50px 20px; }
         }
     </style>
 </head>
@@ -118,45 +119,45 @@
 
     <div class="parallax bg-1">
         <div class="content-section">
-            <img src="https://padelgalis.com/wp-content/uploads/2024/05/logo.webp" alt="Padel Galis Logo" class="logo">
-            <div class="badge">Stock Local - Casablanca</div>
-            <h1>Lot de 7 Terrains Premium</h1>
-            <p>Profitez de la qualité du fournisseur officiel du World Padel Tour, disponible immédiatement et sans délai d'importation.</p>
+            <img src="https://padelgalis.com/wp-content/themes/padelgalis/assets/img/logo.svg" alt="Padel Galis Logo" class="logo">
+            <div class="badge">Stock Disponible - Casablanca</div>
+            <h1>Lot de 7 Terrains de Padel</h1>
+            <p>Le matériel du fournisseur officiel du World Padel Tour, disponible sans délai d'importation ni de fabrication.</p>
         </div>
     </div>
 
     <div class="parallax bg-2">
         <div class="content-section">
-            <h2>Composition du Lot</h2>
+            <h2>Détail du Lot</h2>
             <div class="grid">
                 <div class="card">
                     <h3>1x ULTRAPANORAMICA</h3>
-                    <p>Le sommet de la gamme Padel Galis. Une structure sans obstacles visuels, conçue pour les terrains centraux et une expérience spectateur maximale.</p>
+                    <p>Technologie panoramique totale. Absence de montants pour une expérience spectateur immersive. Le terrain "Showcase" par excellence.</p>
                 </div>
                 <div class="card">
                     <h3>6x MUNDIAL</h3>
-                    <p>L'alliance parfaite entre robustesse et esthétique. Le modèle plébiscité par les clubs professionnels pour sa durabilité exceptionnelle.</p>
+                    <p>Design robuste et polyvalent. Structure renforcée pour une exploitation intensive, compatible indoor et outdoor.</p>
                 </div>
             </div>
-            <p><strong>Spécifications :</strong> Verre trempé 12mm, Acier galvanisé, Gazon monofilament, Éclairage LED haute performance.</p>
+            <p><strong>Qualité Certifiée :</strong> Verre trempé 12mm, Acier galvanisé, Gazon monofilament, Éclairage LED inclus.</p>
         </div>
     </div>
 
     <div class="parallax bg-3">
         <div class="content-section">
-            <h2>Transparence & Logistique</h2>
-            <p>Matériel neuf (jamais monté). En raison du stockage, quelques retouches esthétiques mineures (peinture, grillage) sont à prévoir.</p>
-            <p>Vendus en l'état avec une remise exceptionnelle sur le lot complet.</p>
-            <p><strong>Enlèvement :</strong> Périphérie de Casablanca. Manutention et transport à la charge de l'acquéreur.</p>
+            <h2>État & Logistique</h2>
+            <p>Matériel neuf n'ayant jamais servi. Stocké avec soin, il présente quelques retouches esthétiques mineures à prévoir (peinture et grillage).</p>
+            <p><strong>Prix :</strong> Remisé pour l'achat du lot complet.</p>
+            <p><strong>Localisation :</strong> Casablanca. Enlèvement, manutention et transport à la charge de l'acquéreur.</p>
         </div>
     </div>
 
-    <div class="phone-container" style="text-align: center;">
+    <div class="contact-container">
         <h2>Contact Direct</h2>
-        <p>Appelez-nous pour obtenir le dossier complet et discuter du tarif.</p>
+        <p>Appelez pour obtenir les fiches techniques complètes et le tarif.</p>
         <a href="tel:0668556156" class="phone-link">06 68 55 61 56</a>
-        <p style="margin-top: 60px; opacity: 0.5; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-            Padel Galis - Casablanca, Maroc
+        <p style="margin-top: 80px; opacity: 0.5; font-size: 0.8rem; text-transform: uppercase;">
+            Padel Galis Stock Local - Maroc
         </p>
     </div>
 
