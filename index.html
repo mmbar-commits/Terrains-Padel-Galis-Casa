@@ -18,17 +18,18 @@
             --card-border: rgba(255, 255, 255, 0.1);
         }
 
-        /* Scroll Snap */
-        html, body {
+        /* Scroll Snap appliqué rigoureusement sur html */
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-            scroll-behavior: smooth;
         }
 
         /* Header fixe avec fond opaque */
@@ -68,20 +69,25 @@
             white-space: nowrap;
         }
 
-        /* Sections adaptées pour aligner le titre sous l'en-tête */
+        /* Sections adaptées pour s'enclencher systématiquement sous le header */
         section {
             position: relative;
             min-height: 100vh;
-            height: auto;
             width: 100%;
             scroll-snap-align: start;
+            scroll-snap-stop: always; /* Force l'arrêt précis en haut de section */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; 
+            justify-content: flex-start; /* Aligne tout le contenu en haut */
             align-items: center;
-            padding: 130px 20px 60px;
+            padding: 130px 20px 0; /* Espace prévu pour le header (130px) */
             box-sizing: border-box;
             background-color: var(--bg-color);
+        }
+
+        /* Padding bottom spécifique pour la dernière section qui n'a pas d'indicateur */
+        section:last-child {
+            padding-bottom: 60px;
         }
 
         .container {
@@ -214,11 +220,10 @@
 
         .phone-display:hover { color: var(--accent-color); }
 
+        /* INDICATEUR DE DÉFILEMENT - Modifié pour ne plus être superposé */
         .scroll-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: auto; /* Pousse l'indicateur naturellement vers le bas */
+            padding-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -240,9 +245,9 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         /* RESPONSIVE DESIGN */
@@ -279,7 +284,7 @@
     <section>
         <div class="container hero-layout">
             <div class="badge-premium">Lot disponible immédiatement - Casablanca</div>
-            <h1><strong>7 Terrains</strong> de<br>Padel Premium</h1>
+            <h1><strong>7 Terrains</strong> de<br>Padel de marque Premium</h1>
             <p class="hero-desc">Bénéficiez de l'excellence de l'équipementier officiel du PadelGalis. Notre sélection de courts est disponible immédiatement, sans délai de fabrication, sans délai de livraison, sans délai d'importation, pour propulser votre infrastructure sportive dès aujourd'hui.</p>
         </div>
         
@@ -326,12 +331,6 @@
                 </div>
                 
                 <div class="pro-card">
-                    <div class="accent-title">Pièces de Rechange</div>
-                    <h3>Stock de sécurité</h3>
-                    <p>Une opportunité unique pour les clubs existants de s'assurer un stock de vitres, de grilles ou de gazon de qualité premium, disponible localement en cas de casse ou de maintenance.</p>
-                </div>
-                
-                <div class="pro-card">
                     <div class="accent-title">Hôtellerie & Immobilier</div>
                     <h3>Valeur ajoutée</h3>
                     <p>Idéal pour les hôtels, resorts ou promoteurs immobiliers souhaitant équiper rapidement leurs complexes d'infrastructures sportives très demandées, de qualité mondiale.</p>
@@ -341,6 +340,12 @@
                     <div class="accent-title">Écoles & Campus</div>
                     <h3>Infrastructures sportives</h3>
                     <p>Parfait pour les établissements scolaires ou campus universitaires souhaitant intégrer le sport en vogue dans leurs programmes, avec une installation immédiate et sécurisée.</p>
+                </div>
+
+                <div class="pro-card">
+                    <div class="accent-title">Pièces de Rechange</div>
+                    <h3>Stock de sécurité</h3>
+                    <p>Une opportunité unique pour les clubs existants de s'assurer un stock de vitres, de grilles ou de gazon de qualité premium, disponible localement en cas de casse ou de maintenance.</p>
                 </div>
             </div>
         </div>
